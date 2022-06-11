@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NyBooks">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.books.BooksActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
