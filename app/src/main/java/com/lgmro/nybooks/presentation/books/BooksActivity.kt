@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lgmro.nybooks.R
-import com.lgmro.nybooks.data.model.Book
 import com.lgmro.nybooks.databinding.ActivityBooksBinding
 
 class BooksActivity : AppCompatActivity() {
