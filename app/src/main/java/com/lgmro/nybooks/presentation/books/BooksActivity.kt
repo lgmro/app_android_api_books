@@ -1,16 +1,17 @@
 package com.lgmro.nybooks.presentation.books
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lgmro.nybooks.R
 import com.lgmro.nybooks.databinding.ActivityBooksBinding
+import com.lgmro.nybooks.presentation.base.BaseActivity
 import com.lgmro.nybooks.presentation.details.BookDetailsActivity
 
-class BooksActivity : AppCompatActivity() {
+class BooksActivity : BaseActivity() {
     private lateinit var binding: ActivityBooksBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +20,8 @@ class BooksActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val toolbarMain = binding.toolbarMain
-        toolbarMain.title = getString(R.string.books_title)
-        setSupportActionBar(toolbarMain)
+        val toolbarMain = findViewById<Toolbar>(R.id.toolbarMain)
+        setupToolbar(toolbarMain, R.string.books_title)
 
         val viewModel: BooksViewModel = ViewModelProvider(this).get(BooksViewModel::class.java)
 

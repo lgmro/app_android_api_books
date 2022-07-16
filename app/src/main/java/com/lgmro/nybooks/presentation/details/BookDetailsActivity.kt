@@ -2,12 +2,13 @@ package com.lgmro.nybooks.presentation.details
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.lgmro.nybooks.R
 import com.lgmro.nybooks.databinding.ActivityBookDetailsBinding
+import com.lgmro.nybooks.presentation.base.BaseActivity
 
-class BookDetailsActivity : AppCompatActivity() {
+class BookDetailsActivity : BaseActivity() {
     private lateinit var binding: ActivityBookDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,10 @@ class BookDetailsActivity : AppCompatActivity() {
 
         binding.bookDetailsTitle.text = title
         binding.bookDetailsDescription.text = description
+
+        val toolbarMain = findViewById<Toolbar>(R.id.toolbarMain)
+        setupToolbar(toolbarMain, R.string.book_details_title)
+
 
     }
 
